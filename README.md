@@ -23,7 +23,7 @@ python sudoku.py
 1. To edit a tile, click on the tile, and press any number from `1-9`
 2. To remove a number from a tile, click on the tile, and press `0`
 3. To auto-solve the sudoku, press on the `Solve` button
----
+
 ## Possible Future Features:
 - Time yourself solving the sudoku
 - reset button to generate another sudoku
