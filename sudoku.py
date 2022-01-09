@@ -98,7 +98,7 @@ def sudoku_solver(win):
                         #pygame.time.delay(50)
                 return               
     solved = 1
-
+    
 def main():
     pygame.init()
     win = pygame.display.set_mode((WIDTH, WIDTH))
@@ -120,13 +120,30 @@ def main():
                 win.blit(value, ((j+1)*50+15, (i+1)*50))
     pygame.display.update()
 
-    #sudoku_solver(win)
+    solve_button = pygame.Rect(225, 10, 100, 30)
+    pygame.draw.rect(win, (0,200,100), solve_button)
+    solve_text = pygame.font.SysFont('Comic Sans MS', 25).render("Solve", True, (0,0,0))
+    win.blit(solve_text, (245, 5))
+    pygame.display.update()
+    
+    #solve_sudoku(win)
     while True:
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 pos = pygame.mouse.get_pos()
-                insert(win, (pos[0]//50, pos[1]//50))
-                
+                if solve_button.collidepoint(pos):
+                    sudoku_solver(win)
+                else:
+                    insert(win, (pos[0]//50, pos[1]//50))
+            
+            if event.type == pygame.MOUSEMOTION:
+                if solve_button.collidepoint(pygame.mouse.get_pos()):
+                    pygame.draw.rect(win, (200,100,100), solve_button)
+                    win.blit(solve_text, (245, 5))
+                else:
+                    pygame.draw.rect(win, (0,200,100), solve_button)
+                    win.blit(solve_text, (245, 5))
+                pygame.display.update()
             if event.type == pygame.QUIT:
                 pygame.quit()
                 return
