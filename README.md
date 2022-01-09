@@ -25,5 +25,9 @@ python sudoku.py
 3. To auto-solve the sudoku, press on the `Solve` button
 ---
 <br>
+<div align="center">
+<img src="./example.gif" width=250 height=250>
+</div>
+<br>
 
-![Sudoku-example-play](./example.gif)
+Modified from [PiyushG14](https://github.com/PiyushG14/Pygame-sudoku)
