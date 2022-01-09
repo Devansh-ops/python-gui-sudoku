@@ -17,3 +17,13 @@ pip install -r requirements.txt
 # How to run
 ```
 python sudoku.py
+```
+
+# How to play
+1. To edit a tile, click on the tile, and press any number from `1-9`
+2. To remove a number from a tile, click on the tile, and press `0`
+3. To auto-solve the sudoku, press on the `Solve` button
+---
+<br>
+
+![Sudoku-example-play](./example.gif)
