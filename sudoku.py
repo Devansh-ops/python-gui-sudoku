@@ -5,8 +5,8 @@ WIDTH = 550
 background_color = (251, 247, 245)
 original_grid_element_color = (52, 31, 151)
 
-response = requests.get("https://sugoku.herokuapp.com/board?difficulty=easy")
-grid = response.json()['board']
+response = requests.get("https://sudoku-api.vercel.app/api/dosuku?query={newboard(limit:1){grids{value}}}")
+grid = response.json()['newboard']['grids'][0]['value']
 grid_original = [[grid[x][y] for y in range(len(grid[0]))] for x in range(len(grid))]
 buffer = 5
 
